@@ -1,0 +1,2 @@
+*** Settings ***
+Resource          自定义关键字.txt

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20180303 09:46:00.211" generator="Robot 3.0.2 (Python 2.7.13 on win32)">
+<suite source="E:\llf_58TestSuites\jz_webIntergration\robot_code\rfcode\batch_Request.txt" id="s1" name="batch Request">
+<test id="s1-t1" name="test_case1">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>hello world</arg>
+</arguments>
+<msg timestamp="20180303 09:46:00.876" level="INFO">hello world</msg>
+<status status="PASS" endtime="20180303 09:46:00.876" starttime="20180303 09:46:00.876"></status>
+</kw>
+<tags>
+<tag>test1</tag>
+</tags>
+<status status="PASS" endtime="20180303 09:46:00.879" critical="yes" starttime="20180303 09:46:00.874"></status>
+</test>
+<test id="s1-t2" name="test_case2">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>nihao</arg>
+</arguments>
+<msg timestamp="20180303 09:46:00.887" level="INFO">nihao</msg>
+<status status="PASS" endtime="20180303 09:46:00.887" starttime="20180303 09:46:00.886"></status>
+</kw>
+<tags>
+<tag>test2</tag>
+</tags>
+<status status="PASS" endtime="20180303 09:46:00.889" critical="yes" starttime="20180303 09:46:00.884"></status>
+</test>
+<status status="PASS" endtime="20180303 09:46:00.895" starttime="20180303 09:46:00.219"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="2">Critical Tests</stat>
+<stat fail="0" pass="2">All Tests</stat>
+</total>
+<tag>
+<stat fail="0" pass="1">test1</stat>
+<stat fail="0" pass="1">test2</stat>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="batch Request" pass="2">batch Request</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

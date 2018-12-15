@@ -1,0 +1,28 @@
+*** Settings ***
+Resource          ../配置信息/configIndex.txt
+Library           ../../pycode/Common_Excel.py
+Library           ../../pycode/Common_Exec.py
+
+*** Keywords ***
+获取请求头
+    ${dict_headers}    Create Dictionary    Host=${Host}    User-Agent=${User-Agent}    Accept=${Accept}    Accept-Language=${Accept-Language}    Accept-Encoding=${Accept-Encoding}
+    ...    Cookie=${Cookie}    Connection=${Connection}    Cache-Control=${Cache-Control}
+    Return From Keyword    ${dict_headers}
+
+执行测试
+    [Arguments]    ${testScene}    # 测试场景
+    # 请求方法
+    ${method}    getTestHttpMethod    ${testDataFile}    ${testScene}
+    # 获取用例数目
+    ${case_num}    getTestCaseNum    ${testDataFile}    ${testScene}
+    # 获取当前时间
+    ${execTime}    getCurtime
+    #批量执行testScene测试场景下的用例
+    ${status}    batch_Call    ${httpTestSuite}    ${httpRequestTestCase}    ${testScene}    ${case_num}    ${testCaseReportPath}
+    ...    ${execTime}
+    log    ${status}
+    # 合并报告
+    Comment    ${status}    mergeReport    ${testScene}    ${testCaseReportPath}    ${execTime}
+    Comment    log    ${status}
+    # 清理合并前的报告
+    Comment    cleanLogs    ${testScene}    ${testCaseReportPath}

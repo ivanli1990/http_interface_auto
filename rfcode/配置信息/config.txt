@@ -1,0 +1,8 @@
+*** Settings ***
+
+*** Variables ***
+${testDataFile}    ${projectDir}/testData/testData.xlsx    # 测试数据
+${httpRequestTestCase}    sendHttpRequest    # http请求用例模板
+${httpTestSuite}    ${projectDir}/rfcode/http_Request.txt    # http请求测试套件
+${testCaseReportPath}    ${projectDir}/report/TestCaseReport    # 业务用例测试报告路径
+${projectDir}     E:/llf_58TestSuites/jz_webIntergration/robot_code    # 项目路径

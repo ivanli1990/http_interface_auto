@@ -1,0 +1,3 @@
+*** Settings ***
+Resource          config.txt
+Resource          RequestHeaders.txt

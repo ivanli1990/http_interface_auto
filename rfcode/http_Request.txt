@@ -1,0 +1,20 @@
+*** Settings ***
+Library           ../pycode/Common_Exec.py
+Library           ../pycode/Common_Excel.py
+Resource          关键字/关键字index.txt
+
+*** Test Cases ***
+sendHttpRequest
+    # 获取测试用例数据
+    ${method}    ${url}    ${caseNo}    ${testName}    ${dict_params}    ${expectCode}    ${expectCotent}
+    ...    getTestData    ${testDataFile}    ${testScene}    ${Host}    ${caseNo}
+    # 设置用例说明
+    Set Test Documentation    ${testName}
+    # 请求头
+    ${headers}    获取请求头
+    #根据method发送对应的http请求
+    ${actualCode}    ${actualContent}    send_HttpRequest    ${url}    ${dict_params}    ${headers}    ${method}
+    # 响应码比对
+    Should Be Equal    ${actualCode}    ${expectCode}
+    # 响应内容比对
+    Should Be Equal    ${actualContent}    ${expectCotent}

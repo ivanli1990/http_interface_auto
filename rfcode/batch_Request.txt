@@ -1,0 +1,182 @@
+*** Settings ***
+Library           ../pycode/Common_Exec.py
+Resource          关键字/关键字index.txt
+Resource          配置信息/configIndex.txt
+Library           ../pycode/Common_Excel.py
+
+*** Test Cases ***
+test_getCatesBySecondId
+    [Documentation]    sceneName: 根据二级类获取其下售卖的类别类目信息
+    ...
+    ...    path: /cpc/jz/channel/getCatesBySecondId
+    ...
+    ...    method: get
+    [Tags]    getCatesBySecondId
+    # 测试场景
+    ${testScene}    Set Variable    getCatesBySecondId
+    # 执行测试
+    执行测试    ${testScene}
+
+test_getAreasByCityId
+    [Documentation]    sceneName: 获取本城市信息
+    ...
+    ...    path: /cpc/jz/channel/getAreasByCityId
+    ...
+    ...    method: get
+    ...
+    [Tags]    getCatesBySecondId
+    # 测试场景
+    ${testScene}    Set Variable    getAreasByCityId
+    # 执行测试
+    执行测试    ${testScene}
+
+test_getFisrtCates
+    [Documentation]    sceneName: 获取所有售卖一级类
+    ...
+    ...    path: /cpc/jz/channel/getFisrtCates
+    ...
+    ...    method: get
+    ...
+    [Tags]    getFisrtCates
+    # 测试场景
+    ${testScene}    Set Variable    getFisrtCates
+    # 执行测试
+    执行测试    ${testScene}
+
+test_getSecondCatesByFirstCateId
+    [Documentation]    sceneName: 获取通过一级类获取二级类信息
+    ...
+    ...    path: /cpc/jz/channel/getSecondCatesByFirstCateId
+    ...
+    ...    method: get
+    ...
+    [Tags]    getSecondCatesByFirstCateId
+    # 测试场景
+    ${testScene}    Set Variable    getSecondCatesByFirstCateId
+    # 执行测试
+    执行测试    ${testScene}
+
+test_getCreativeInfo
+    [Documentation]    sceneName: 查询创意信息
+    ...
+    ...    path: /cpc/jz/creative/get
+    ...
+    ...    method: get
+    ...
+    [Tags]    getCreativeInfo
+    # 测试场景
+    ${testScene}    Set Variable    getCreativeInfo
+    # 执行测试
+    执行测试    ${testScene}
+
+test_updateCreativeInfo
+    [Documentation]    sceneName: 更新创意
+    ...
+    ...    path: /cpc/jz/creative/update
+    ...
+    ...    method: get
+    ...
+    [Tags]    updateCreativeInfo
+    # 测试场景
+    ${testScene}    Set Variable    updateCreativeInfo
+    # 执行测试
+    执行测试    ${testScene}
+
+test_getUserStat
+    [Documentation]    sceneName: 获取用户历史推广总效果数据
+    ...
+    ...    path: /cpc/stat/getUserStat
+    ...
+    ...    method: get
+    ...
+    [Tags]    getUserStat
+    # 测试场景
+    ${testScene}    Set Variable    getUserStat
+    # 执行测试
+    执行测试    ${testScene}
+
+test_getStat
+    [Documentation]    sceneName: 获取推广的效果数据
+    ...
+    ...    path: /cpc/stat/getStat
+    ...
+    ...    method: get
+    ...
+    [Tags]    getStat
+    # 测试场景
+    ${testScene}    Set Variable    getStat
+    # 执行测试
+    执行测试    ${testScene}
+
+test_updateBid
+    [Documentation]    sceneName: 更新出价（单个/批量）
+    ...
+    ...    path: /cpc/jz/updateBid
+    ...
+    ...    method: get
+    ...
+    [Tags]    updateBid
+    # 测试场景
+    ${testScene}    Set Variable    updateBid
+    # 执行测试
+    执行测试    ${testScene}
+
+test_updateBudget
+    [Documentation]    sceneName: 更新预算（单个/批量）
+    ...
+    ...    path: /cpc/jz/updateBudget
+    ...
+    ...    method: get
+    ...
+    [Tags]    updateBudget
+    # 测试场景
+    ${testScene}    Set Variable    updateBudget
+    # 执行测试
+    执行测试    ${testScene}
+
+test_updateSchedule
+    [Documentation]    sceneName: 更新日程（单个/批量）
+    ...
+    ...    path: /cpc/jz/updateSchedule
+    ...
+    ...    method: get
+    ...
+    [Tags]    updateSchedule
+    # 测试场景
+    ${testScene}    Set Variable    updateSchedule
+    # 执行测试
+    执行测试    ${testScene}
+
+test_updateAreas
+    [Documentation]    sceneName: 更新地区信息
+    ...
+    ...    path: /cpc/jz/updateArea
+    ...
+    ...    method: get
+    ...
+    [Tags]    updateAreas
+    # 测试场景
+    ${testScene}    Set Variable    updateAreas
+    # 执行测试
+    执行测试    ${testScene}
+
+test_updateCate
+    [Documentation]    sceneName: 更新类目信息
+    ...
+    ...    path: /cpc/jz/updateCate
+    ...
+    ...    method: get
+    ...
+    [Tags]    updateCate
+    # 测试场景
+    ${testScene}    Set Variable    updateCate
+    # 执行测试
+    执行测试    ${testScene}
+
+test_case1
+    [Tags]    test1
+    log    hello world
+
+test_case2
+    [Tags]    test2
+    log    nihao

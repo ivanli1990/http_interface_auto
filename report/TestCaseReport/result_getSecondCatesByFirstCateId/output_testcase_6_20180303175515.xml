@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20180303 17:55:27.659" generator="Robot 3.0.2 (Python 2.7.13 on win32)">
+<suite source="E:\llf_58TestSuites\jz_webIntergration\robot_code\rfcode\http_Request.txt" id="s1" name="http Request">
+<test id="s1-t1" name="sendHttpRequest">
+<kw name="Get Test Data" library="Common_Excel">
+<doc>从excel中获取测试数据</doc>
+<arguments>
+<arg>${testDataFile}</arg>
+<arg>${testScene}</arg>
+<arg>${Host}</arg>
+<arg>${caseNo}</arg>
+</arguments>
+<assign>
+<var>${method}</var>
+<var>${url}</var>
+<var>${caseNo}</var>
+<var>${testName}</var>
+<var>${dict_params}</var>
+<var>${expectCode}</var>
+<var>${expectCotent}</var>
+</assign>
+<msg timestamp="20180303 17:55:28.772" level="INFO">${method} = get</msg>
+<msg timestamp="20180303 17:55:28.772" level="INFO">${url} = http://jingzhunapi.58.com/cpc/jz/channel/getSecondCatesByFirstCateId</msg>
+<msg timestamp="20180303 17:55:28.772" level="INFO">${caseNo} = 6</msg>
+<msg timestamp="20180303 17:55:28.772" level="INFO">${testName} = TestCase6_firstCateId为空字符串</msg>
+<msg timestamp="20180303 17:55:28.772" level="INFO">${dict_params} = {"firstCateId": "\"\""}</msg>
+<msg timestamp="20180303 17:55:28.772" level="INFO">${expectCode} = 200</msg>
+<msg timestamp="20180303 17:55:28.773" level="INFO">${expectCotent} = {"code":400,"msg":"传入参数有误，请重新输入！","errorcode":1}</msg>
+<status status="PASS" endtime="20180303 17:55:28.773" starttime="20180303 17:55:28.648"></status>
+</kw>
+<kw name="Set Test Documentation" library="BuiltIn">
+<doc>Sets documentation for the current test case.</doc>
+<arguments>
+<arg>${testName}</arg>
+</arguments>
+<msg timestamp="20180303 17:55:28.774" level="INFO">Set test documentation to:
+TestCase6_firstCateId为空字符串</msg>
+<status status="PASS" endtime="20180303 17:55:28.775" starttime="20180303 17:55:28.773"></status>
+</kw>
+<kw name="获取请求头" library="自定义关键字">
+<assign>
+<var>${headers}</var>
+</assign>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>Host=${Host}</arg>
+<arg>User-Agent=${User-Agent}</arg>
+<arg>Accept=${Accept}</arg>
+<arg>Accept-Language=${Accept-Language}</arg>
+<arg>Accept-Encoding=${Accept-Encoding}</arg>
+<arg>Cookie=${Cookie}</arg>
+<arg>Connection=${Connection}</arg>
+<arg>Cache-Control=${Cache-Control}</arg>
+</arguments>
+<assign>
+<var>${dict_headers}</var>
+</assign>
+<msg timestamp="20180303 17:55:28.779" level="INFO">${dict_headers} = {"Host": "jingzhunapi.58.com", "User-Agent": "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:56.0) Gecko/20100101 Firefox/56.0", "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8", "A...</msg>
+<status status="PASS" endtime="20180303 17:55:28.779" starttime="20180303 17:55:28.776"></status>
+</kw>
+<kw name="Return From Keyword" library="BuiltIn">
+<doc>Returns from the enclosing user keyword.</doc>
+<arguments>
+<arg>${dict_headers}</arg>
+</arguments>
+<msg timestamp="20180303 17:55:28.780" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" endtime="20180303 17:55:28.780" starttime="20180303 17:55:28.779"></status>
+</kw>
+<msg timestamp="20180303 17:55:28.782" level="INFO">${headers} = {"Host": "jingzhunapi.58.com", "User-Agent": "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:56.0) Gecko/20100101 Firefox/56.0", "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8", "A...</msg>
+<status status="PASS" endtime="20180303 17:55:28.782" starttime="20180303 17:55:28.775"></status>
+</kw>
+<kw name="Send HttpRequest" library="Common_Exec">
+<doc>发送http请求</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${dict_params}</arg>
+<arg>${headers}</arg>
+<arg>${method}</arg>
+</arguments>
+<assign>
+<var>${actualCode}</var>
+<var>${actualContent}</var>
+</assign>
+<msg timestamp="20180303 17:55:29.371" level="INFO">${actualCode} = 200</msg>
+<msg timestamp="20180303 17:55:29.372" level="INFO">${actualContent} = {"code":400,"msg":"传入参数有误，请重新输入！","errorcode":1}</msg>
+<status status="PASS" endtime="20180303 17:55:29.372" starttime="20180303 17:55:28.783"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${actualCode}</arg>
+<arg>${expectCode}</arg>
+</arguments>
+<msg timestamp="20180303 17:55:29.375" level="INFO">Argument types are:
+&lt;type 'str'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20180303 17:55:29.375" starttime="20180303 17:55:29.373"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${actualContent}</arg>
+<arg>${expectCotent}</arg>
+</arguments>
+<status status="PASS" endtime="20180303 17:55:29.379" starttime="20180303 17:55:29.376"></status>
+</kw>
+<doc>TestCase6_firstCateId为空字符串</doc>
+<status status="PASS" endtime="20180303 17:55:29.380" critical="yes" starttime="20180303 17:55:28.647"></status>
+</test>
+<status status="PASS" endtime="20180303 17:55:29.383" starttime="20180303 17:55:27.672"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="http Request" pass="1">http Request</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
